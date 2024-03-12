@@ -11,7 +11,7 @@ namespace test {
     export function getBattery(pin: AnalogPin): number {
         battery_level = Math.round(pins.map(
             pins.analogReadPin(pin),
-            580,
+            530,
             660,
             0,
             100
