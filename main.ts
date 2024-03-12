@@ -9,13 +9,21 @@ namespace test {
     //% block="Get battery level (percentage) at Pin %pin"
 
     export function getBattery(pin: AnalogPin): number {
-        battery_level = Math.round(pins.map(
-            pins.analogReadPin(pin),
-            530,
-            660,
-            0,
-            100
-        ));
+      let max = 660;   // define the max reading from battery
+      let min = 530;   // define the min reading from battery
+
+      if (pins.analogReadPin(pin) < min && pins.analogReadPin(pin) > max) {
+          battery_level = Math.round(pins.map(
+              pins.analogReadPin(pin),
+              min,
+              max,
+              0,
+              100
+              )
+          );
+      } else {
+      	   battery_level = 0; // reading outside the max and min returns 0
+      }
         return battery_level;
     }
 }
