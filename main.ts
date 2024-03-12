@@ -13,8 +13,7 @@ namespace test {
       let min = 570;   // define the min reading from battery
 
       if (pins.analogReadPin(pin) < min && pins.analogReadPin(pin) > max) {
-          battery_level = Math.ceil(
-              pins.map(pins.analogReadPin(pin), min, max, 0, 100) / 5 * 5)
+          battery_level = Math.ceil((pins.analogReadPin(pin) - 570) / 5 * 5)
           );
       } else {
       	   battery_level = 0; // reading outside the max and min returns 0
