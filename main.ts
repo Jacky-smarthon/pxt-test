@@ -3,7 +3,7 @@
  */
 //% weight=999 color=#3CB371 icon="" block="Test"
 namespace test {
-    let battery_variable = 0
+    let battery_level = 0
 
     //% blockId="smarthon_get_battery_level"
     //% block="Get battery level (percentage) at Pin %pin"
@@ -19,4 +19,3 @@ namespace test {
         return battery_level;
     }
 }
-
