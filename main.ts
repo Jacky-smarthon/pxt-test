@@ -1,37 +1,22 @@
 /**
-* 使用此文件来定义自定义函数和图形块。
-* 想了解更详细的信息，请前往 https://makecode.microbit.org/blocks/custom
-*/
-
-enum MyEnum {
-    //% block="one"
-    One,
-    //% block="two"
-    Two
-}
-
-/**
- * Custom blocks
+ * Test block
  */
-//% weight=100 color=#0fbc11 icon=""
-namespace custom {
-    /**
-     * TODO: describe your function here
-     * @param n describe parameter here, eg: 5
-     * @param s describe parameter here, eg: "Hello"
-     * @param e describe parameter here
-     */
-    //% block
-    export function foo(n: number, s: string, e: MyEnum): void {
-        // Add code here
-    }
+//% weight=999 color=#3CB371 icon="" block="Test"
+namespace test {
+    let battery_variable = 0
 
-    /**
-     * TODO: describe your function here
-     * @param value describe value here, eg: 5
-     */
-    //% block
-    export function fib(value: number): number {
-        return value <= 1 ? value : fib(value -1) + fib(value - 2);
+    //% blockId="smarthon_get_battery_level"
+    //% block="Get battery level (percentage) at Pin %pin"
+
+    export function getBattery(pin: AnalogPin): number {
+        battery_level = Math.round(pins.map(
+            pins.analogReadPin(pin),
+            580,
+            660,
+            0,
+            100
+        ));
+        return battery_level;
     }
 }
+
