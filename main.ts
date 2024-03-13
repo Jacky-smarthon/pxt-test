@@ -9,8 +9,8 @@ namespace test {
     //% block="Get battery level (percentage) at Pin %pin"
 
     export function getBattery(pin: AnalogPin): number {
-        let max = 655;   // define the max reading from battery
-        let min = 574;   // define the min reading from battery
+        let max = 700;   // define the max reading from battery
+        let min = 570;   // define the min reading from battery
 
         if (pins.analogReadPin(pin) > min && pins.analogReadPin(pin) < max) {
             battery_level = Math.ceil(
